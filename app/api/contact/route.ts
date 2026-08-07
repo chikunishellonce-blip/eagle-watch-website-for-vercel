@@ -51,8 +51,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[contact] failed to send email:", err);
+    const message = err instanceof Error ? err.message : "We couldn't send your message right now. Please call or WhatsApp us instead.";
     return NextResponse.json(
-      { ok: false, message: "We couldn't send your message right now. Please call or WhatsApp us instead." },
+      { ok: false, message },
       { status: 502 }
     );
   }
