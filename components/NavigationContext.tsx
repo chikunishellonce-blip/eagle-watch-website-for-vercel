@@ -6,7 +6,6 @@ export type SectionId =
   | "hero"
   | "about"
   | "services"
-  | "fieldlog"
   | "industries"
   | "technology"
   | "why"

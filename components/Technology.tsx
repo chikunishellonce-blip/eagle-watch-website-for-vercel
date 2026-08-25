@@ -49,7 +49,7 @@ export default function Technology() {
             <ScrollReveal
               key={t.key}
               delay={i * 0.05}
-              className="flex flex-col items-center text-center gap-3 border border-line rounded p-7 hover:border-signal/50 transition-colors"
+              className="flex flex-col items-center text-center gap-3 bg-ink/20 rounded-lg p-7 hover:bg-ink/35 transition-colors"
             >
               <svg
                 width="30"
