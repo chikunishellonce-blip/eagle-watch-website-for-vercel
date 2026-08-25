@@ -10,7 +10,6 @@ const links: { id: SectionId; label: string }[] = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
   { id: "services", label: "Services" },
-  { id: "fieldlog", label: "Field Log" },
   { id: "industries", label: "Industries" },
   { id: "technology", label: "Technology" },
   { id: "why", label: "Why Us" },

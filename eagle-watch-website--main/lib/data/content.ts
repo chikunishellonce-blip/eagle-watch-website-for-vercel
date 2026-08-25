@@ -96,8 +96,8 @@ export const companyInfo = {
   addressLine: "1 Selous Avenue, Eastlea, Harare, Zimbabwe",
   lat: -17.8216737,
   lng: 31.0588863,
-  phones: ["+263 712 335 585", "+263 242 882 915", "+263 242 795 513"],
+  phones: ["+263 772 621 423", "+263 242 882 915", "+263 242 795 513"],
   emergencyPhone: "+263242795513",
   email: "sales@eaglewatchsecurity.co.zw",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "263712335585",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "263772621423",
 };

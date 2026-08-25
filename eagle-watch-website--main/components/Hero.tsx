@@ -18,9 +18,13 @@ export default function Hero() {
   const { setActiveSection } = useNavigation();
 
   return (
-    <section id="hero" className="relative bg-ink text-white overflow-hidden pt-[74px]">
+    <section
+      id="hero"
+      className="relative bg-ink text-white overflow-hidden pt-[74px] bg-[url('/images/field-cctv-mount.jpg')] bg-cover bg-center"
+    >
+      <div className="absolute inset-0 bg-ink/85" aria-hidden="true" />
       <HeroParticles />
-      <div className="wrap relative grid lg:grid-cols-[1.2fr_1fr] gap-14 py-24 lg:py-32">
+      <div className="wrap relative z-10 grid lg:grid-cols-[1.2fr_1fr] gap-14 py-24 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +67,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-panel border border-line rounded p-7 self-start lg:mt-8"
+          className="bg-ink/65 backdrop-blur-sm border-l-2 border-signal p-7 self-start lg:mt-8"
         >
           <span className="font-mono text-xs text-signal">Risk & loss & security is our business</span>
           <div className="mt-5 flex flex-col gap-4">
