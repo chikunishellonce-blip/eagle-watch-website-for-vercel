@@ -47,8 +47,8 @@ export const services: Service[] = [
   },
   {
     number: "09",
-    title: "Residential & VIP Protection",
-    description: "Tailored protection for homes and high-profile individuals.",
+    title: "Vehicle Tracking Systems & Installation",
+    description: "Vehicle tracking system supply, installation and support for reliable fleet and personal vehicle monitoring.",
   },
   {
     number: "10",

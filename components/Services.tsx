@@ -11,7 +11,7 @@ const serviceImages = [
   "/images/field-electric-fence.jpg",
   "/images/alarm system.jpeg",
   "/images/investgators n undercover.jpeg",
-  "/images/armed security guards.webp",
+  "/images/WhatsApp Image 2026-08-26 at 13.10.56.jpeg",
   "/images/parading.webp",
 ];
 
