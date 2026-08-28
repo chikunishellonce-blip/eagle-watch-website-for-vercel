@@ -1,12 +1,18 @@
-export const industries: string[] = [
-  "Corporate",
-  "Hotels",
-  "Retail & Shopping Centres",
-  "Manufacturing",
-  "Public Sector & Government",
-  "Transport, Warehousing & Logistics",
-  "Education",
-  "Residential & Property Management",
+export type Industry = {
+  name: string;
+  image: string;
+  alt: string;
+};
+
+export const industries: Industry[] = [
+  { name: "Corporate", image: "/images/corporate.jpeg", alt: "Corporate security service" },
+  { name: "Hotels", image: "/images/hotel.jpeg", alt: "Hotel security service" },
+  { name: "Retail & Shopping Centres", image: "/images/retail and shopping centre.jpg", alt: "Retail and shopping centre security service" },
+  { name: "Manufacturing", image: "/images/manufacturing.jpg", alt: "Manufacturing site security service" },
+  { name: "Public Sector & Government", image: "/images/public sector and government.jpg", alt: "Public sector and government security service" },
+  { name: "Transport, Warehousing & Logistics", image: "/images/transport warehuse and logistcs.jpg", alt: "Transport, warehouse and logistics security service" },
+  { name: "Education", image: "/images/education.jpg", alt: "Education campus security service" },
+  { name: "Residential & Property Management", image: "/images/residential and property management.jpg", alt: "Residential property security service" },
 ];
 
 export type TechItem = {
@@ -26,7 +32,7 @@ export const whyChecklist: string[] = [
   "Licensed under the Private Investigators and Security Guards Act",
   "Clear corporate objectives, and swift, flexible decision-making",
   "Market intelligence to keep pricing competitive without cutting corners",
-  "Backup support services and a senior supervisor on standby",
+  "Backup support services and a supervisor on standby",
   "Discipline, commitment to duty, and direct customer liaison",
 ];
 
@@ -93,10 +99,10 @@ export const trustBar = [
 export const companyInfo = {
   name: "Eagle Watch Security Services (Pvt) Ltd",
   tagline: "Protecting People. Securing Tomorrow.",
-  addressLine: "1 Selous Avenue, Eastlea, Harare, Zimbabwe",
+  addressLine: "1 Selous Avenue, Harare, Zimbabwe",
   lat: -17.8216737,
   lng: 31.0588863,
-  phones: ["+263 772 621 423", "+263 242 882 915", "+263 242 795 513"],
+  phones: ["+263 772 621 423", "+263 242 882 915", "+263 242 795 513", "+263 242 709 487"],
   emergencyPhone: "+263242795513",
   email: "sales@eaglewatchsecurity.co.zw",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "263772621423",
