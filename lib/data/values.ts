@@ -37,7 +37,7 @@ export const eagleValues: EagleValue[] = [
 
 export const visionMission = {
   vision:
-    "Eagle Watch is a security services provider that aspires to become the largest security concern in Southern Africa.",
+    "Eagle Watch is a licensed security services provider visioned to become a leading security service provider in Southern Africa.",
   mission:
     "To become the first choice provider of a diverse and wholesome range of security products — from the traditional static guard to virtual security solutions — through embracing technological and societal advances.",
 };

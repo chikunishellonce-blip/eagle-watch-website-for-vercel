@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { NavigationProvider } from "@/components/NavigationContext";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.eaglewatchsecurity.co.zw";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <NavigationProvider>
           <main id="main">{children}</main>
           <Footer />
+          <FloatingWhatsApp />
         </NavigationProvider>
       </body>
     </html>

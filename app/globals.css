@@ -40,6 +40,34 @@
 }
 
 @layer components {
+  @keyframes whatsapp-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes whatsapp-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.35;
+    }
+    50% {
+      transform: scale(1.16);
+      opacity: 0;
+    }
+  }
+
+  .whatsapp-float {
+    animation: whatsapp-float 3s ease-in-out infinite;
+  }
+
+  .whatsapp-pulse {
+    animation: whatsapp-pulse 2.4s ease-out infinite;
+  }
+
   .wrap {
     @apply max-w-wrap mx-auto px-6 sm:px-5;
   }

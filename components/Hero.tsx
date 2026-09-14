@@ -39,28 +39,36 @@ export default function Hero() {
             Securing tomorrow.
           </h1>
           <p className="mt-6 max-w-lg text-steel-light text-lg leading-relaxed">
-            A licensed security services provider building toward the largest security concern in
-            Southern Africa — from traditional static guarding to virtual, technology-driven
-            protection.
+            A licensed security services provider visioned to become a leading security service
+            provider in Southern Africa.
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <button
+          <motion.div
+            className="mt-9 flex flex-wrap items-center gap-4"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <motion.button
               onClick={() => setActiveSection("contact")}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 bg-signal hover:bg-signal-dim transition-colors text-white font-semibold text-sm px-6 py-3.5 rounded-[3px]"
             >
               Request a Quote
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
-            </button>
-            <a
+            </motion.button>
+            <motion.a
               href={`tel:${companyInfo.emergencyPhone}`}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 text-sm font-semibold text-white border border-line px-6 py-3.5 rounded-[3px] hover:border-signal transition-colors"
             >
               <span className="w-2 h-2 rounded-full bg-signal animate-pulse motion-reduce:animate-none" />
               Emergency Line
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -71,11 +79,17 @@ export default function Hero() {
         >
           <span className="font-mono text-xs text-signal">Risk, loss & security is our priority</span>
           <div className="mt-5 flex flex-col gap-4">
-            {stats.map((s) => (
-              <div key={s.k} className="flex justify-between gap-4 border-t border-line pt-4 first:border-t-0 first:pt-0">
+            {stats.map((s, i) => (
+              <motion.div
+                key={s.k}
+                initial={{ opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.45, delay: 0.4 + i * 0.08, ease: "easeOut" }}
+                className="flex justify-between gap-4 border-t border-line pt-4 first:border-t-0 first:pt-0"
+              >
                 <span className="text-xs uppercase tracking-wide text-steel-light">{s.k}</span>
                 <span className="text-sm text-right text-white/90">{s.v}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

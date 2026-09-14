@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { companyInfo } from "@/lib/data/content";
@@ -20,6 +20,8 @@ export default function Nav() {
   const { activeSection, setActiveSection } = useNavigation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -28,14 +30,40 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (headerRef.current && event.target instanceof Node && !headerRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [open]);
+
   return (
     <header
+      ref={headerRef}
       className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
         scrolled ? "bg-ink/90 backdrop-blur-md border-b border-line" : "bg-transparent"
       }`}
     >
       <div className="wrap flex items-center gap-8 h-[74px]">
         <button
+          ref={menuButtonRef}
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-controls="mobile-menu"

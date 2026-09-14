@@ -86,6 +86,26 @@ export default function Contact() {
               ))}
             </div>
 
+            <div className="border-t border-line-dark pt-6">
+              <div className="text-xs uppercase tracking-wide text-steel mb-3">Reach us directly</div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`tel:${companyInfo.emergencyPhone}`}
+                  className="inline-flex justify-center items-center gap-2 bg-signal hover:bg-signal-dim transition-colors text-white font-semibold text-sm px-5 py-3 rounded-[3px]"
+                >
+                  Call the emergency line
+                </a>
+                <a
+                  href={`https://wa.me/${companyInfo.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex justify-center items-center gap-2 border border-line-dark hover:border-signal transition-colors text-ink font-semibold text-sm px-5 py-3 rounded-[3px]"
+                >
+                  WhatsApp us
+                </a>
+              </div>
+            </div>
+
             <div className="h-[280px] lg:h-[320px] border border-line-dark rounded overflow-hidden">
               <SiteMap />
             </div>
