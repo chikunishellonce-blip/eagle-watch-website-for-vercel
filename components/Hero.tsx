@@ -77,7 +77,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="bg-ink/65 backdrop-blur-sm border-l-2 border-signal p-7 self-start lg:mt-8"
         >
-          <span className="font-mono text-xs text-signal">Risk, loss & security is our priority</span>
+          <span className="font-mono text-xs text-signal">Risk, loss & security are our priorities</span>
           <div className="mt-5 flex flex-col gap-4">
             {stats.map((s, i) => (
               <motion.div

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useMemo, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, useMemo, type ReactNode } from "react";
 
 export type SectionId =
   | "hero"
@@ -20,6 +20,14 @@ const NavigationContext = createContext<NavigationContextValue | null>(null);
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
   const [activeSection, setActiveSectionState] = useState<SectionId>("hero");
+
+  useEffect(() => {
+    const section = new URLSearchParams(window.location.search).get("section");
+    const validSections: SectionId[] = ["hero", "about", "services", "industries", "technology", "why", "contact"];
+    if (section && validSections.includes(section as SectionId)) {
+      setActiveSectionState(section as SectionId);
+    }
+  }, []);
 
   const setActiveSection = (section: SectionId) => {
     setActiveSectionState(section);

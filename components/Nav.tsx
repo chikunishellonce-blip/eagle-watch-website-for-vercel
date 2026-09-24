@@ -57,39 +57,27 @@ export default function Nav() {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
-        scrolled ? "bg-ink/90 backdrop-blur-md border-b border-line" : "bg-transparent"
+      className={`sticky top-0 inset-x-0 z-[100] transition-all duration-300 ${
+        scrolled
+          ? "bg-ink/80 backdrop-blur-md border-b border-white/10 shadow-[0_8px_25px_rgba(0,0,0,0.22)]"
+          : "bg-ink/55 backdrop-blur-md border-b border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.16)]"
       }`}
     >
-      <div className="wrap flex items-center gap-8 h-[74px]">
+      <div className="wrap flex items-center h-[74px]">
         <button
           ref={menuButtonRef}
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="lg:hidden text-white p-2"
+          className="md:hidden text-white p-2 shrink-0 mr-3"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <button
-              key={l.id}
-              onClick={() => setActiveSection(l.id)}
-              className={`text-[13.5px] font-medium transition-colors ${
-                activeSection === l.id ? "text-white" : "text-steel-light hover:text-white"
-              }`}
-            >
-              {l.label}
-            </button>
-          ))}
-        </nav>
-
-        <button onClick={() => setActiveSection("hero")} className="flex items-center gap-3 group cursor-pointer">
+        <button onClick={() => setActiveSection("hero")} className="flex items-center gap-3 group cursor-pointer shrink-0">
           <Image
             src="/images/eagle-watch-logo.svg"
             alt="Eagle Watch Security logo"
@@ -98,7 +86,7 @@ export default function Nav() {
             className="h-11 w-auto"
             priority
           />
-          <span className="font-display font-semibold text-[15px] leading-tight text-white">
+          <span className="font-display font-semibold text-[15px] leading-tight text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
             Eagle Watch Security
             <span className="block font-mono font-normal text-[10px] tracking-[0.12em] uppercase text-steel-light mt-0.5">
               {companyInfo.tagline}
@@ -106,12 +94,25 @@ export default function Nav() {
           </span>
         </button>
 
-        <button
-          onClick={() => setActiveSection("contact")}
-          className="ml-auto hidden lg:inline-flex items-center gap-2 bg-signal text-white text-[13px] font-semibold px-[18px] py-2.5 rounded-[3px] hover:bg-signal-dim transition-colors"
-        >
-          Request a Quote
-        </button>
+        <nav className="hidden md:flex items-center justify-center gap-6 flex-1 mx-6">
+          {links.map((l) => (
+            <button
+              key={l.id}
+              onClick={() => setActiveSection(l.id)}
+              className={`relative text-[13.5px] font-semibold transition-all duration-200 tracking-[0.04em] whitespace-nowrap ${
+                activeSection === l.id
+                  ? "text-white"
+                  : "text-white/75 hover:text-white"
+              }`}
+            >
+              {l.label}
+              {activeSection === l.id && (
+                <span className="absolute -bottom-2 left-0 right-0 mx-auto h-px w-full bg-gold" />
+              )}
+            </button>
+          ))}
+        </nav>
+
       </div>
 
       <AnimatePresence>
@@ -122,7 +123,7 @@ export default function Nav() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="lg:hidden bg-ink border-b border-line overflow-hidden"
+            className="lg:hidden bg-ink/80 border-b border-white/10 overflow-hidden backdrop-blur-md"
           >
             <div className="wrap flex flex-col py-4 gap-1">
               {links.map((l) => (
@@ -139,15 +140,6 @@ export default function Nav() {
                   {l.label}
                 </button>
               ))}
-              <button
-                onClick={() => {
-                  setActiveSection("contact");
-                  setOpen(false);
-                }}
-                className="mt-2 w-full inline-flex justify-center items-center gap-2 bg-signal text-white text-sm font-semibold px-4 py-3 rounded-[3px]"
-              >
-                Request a Quote
-              </button>
             </div>
           </motion.nav>
         )}

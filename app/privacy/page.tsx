@@ -10,6 +10,10 @@ export default function PrivacyPage() {
   return (
     <main className="bg-paper min-h-screen pt-[74px]">
       <div className="wrap max-w-3xl py-20">
+        <a href="/" className="inline-flex items-center gap-2 text-sm text-signal hover:underline mb-10">
+          <span aria-hidden="true">&larr;</span>
+          Back to home
+        </a>
         <div className="eyebrow text-signal mb-4">Legal</div>
         <h1 className="text-4xl sm:text-5xl font-semibold">Privacy policy</h1>
         <p className="mt-5 text-steel leading-relaxed">

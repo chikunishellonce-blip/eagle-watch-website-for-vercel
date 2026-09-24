@@ -16,6 +16,8 @@ const config: Config = {
         "navy-light": "#33403E",
         signal: "#D88932",
         "signal-dim": "#B96B1D",
+        gold: "#D88932",
+        "gold-dark": "#B96B1D",
         paper: "#FBFAF6",
         "paper-dim": "#F0EEE7",
         line: "rgba(255,255,255,0.16)",

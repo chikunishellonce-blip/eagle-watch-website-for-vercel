@@ -2,17 +2,58 @@ export type Industry = {
   name: string;
   image: string;
   alt: string;
+  description: string;
 };
 
 export const industries: Industry[] = [
-  { name: "Corporate", image: "/images/corporate.jpeg", alt: "Corporate security service" },
-  { name: "Hotels", image: "/images/hotel.jpeg", alt: "Hotel security service" },
-  { name: "Retail & Shopping Centres", image: "/images/retail and shopping centre.jpg", alt: "Retail and shopping centre security service" },
-  { name: "Manufacturing", image: "/images/manufacturing.jpg", alt: "Manufacturing site security service" },
-  { name: "Public Sector & Government", image: "/images/public sector and government.jpg", alt: "Public sector and government security service" },
-  { name: "Transport, Warehousing & Logistics", image: "/images/transport warehuse and logistcs.jpg", alt: "Transport, warehouse and logistics security service" },
-  { name: "Education", image: "/images/education.jpg", alt: "Education campus security service" },
-  { name: "Residential & Property Management", image: "/images/residential and property management.jpg", alt: "Residential property security service" },
+  {
+    name: "Corporate",
+    image: "/images/corporate.jpeg",
+    alt: "Corporate security service",
+    description: "Protecting executive spaces, offices and business operations with clear protocols and visible deterrence.",
+  },
+  {
+    name: "Hotels",
+    image: "/images/hotel.jpeg",
+    alt: "Hotel security service",
+    description: "Securing guest experiences, entrances and staff movement with discreet, professional guarding.",
+  },
+  {
+    name: "Retail & Shopping Centres",
+    image: "/images/retail and shopping centre.jpg",
+    alt: "Retail and shopping centre security service",
+    description: "Supporting customer safety, stock protection and smooth daily operations across busy retail environments.",
+  },
+  {
+    name: "Manufacturing",
+    image: "/images/manufacturing.jpg",
+    alt: "Manufacturing site security service",
+    description: "Monitoring industrial sites, access points and perimeters while preserving production continuity.",
+  },
+  {
+    name: "Public Sector & Government",
+    image: "/images/public sector and government.jpg",
+    alt: "Public sector and government security service",
+    description: "Delivering disciplined protection for sensitive sites and public-facing institutions with dependable oversight.",
+  },
+  {
+    name: "Transport, Warehousing & Logistics",
+    image: "/images/transport warehuse and logistcs.jpg",
+    alt: "Transport, warehouse and logistics security service",
+    description: "Keeping vehicles, cargo flows and storage zones secure from access breaches and operational disruption.",
+  },
+  {
+    name: "Education",
+    image: "/images/education.jpg",
+    alt: "Education campus security service",
+    description: "Creating safer learning environments for staff, students and visitors with calm, vigilant presence.",
+  },
+  {
+    name: "Residential & Property Management",
+    image: "/images/residential and property management.jpg",
+    alt: "Residential property security service",
+    description: "Safeguarding estates, residential compounds and managed properties with responsive security coverage.",
+  },
 ];
 
 export type TechItem = {

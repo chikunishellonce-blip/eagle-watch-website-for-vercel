@@ -1,13 +1,10 @@
 "use client";
 
 import { companyInfo } from "@/lib/data/content";
-import { useNavigation } from "@/components/NavigationContext";
 
 const year = new Date().getFullYear();
 
 export default function Footer() {
-  const { setActiveSection } = useNavigation();
-
   return (
     <footer className="bg-ink text-steel-light border-t border-line">
       <div className="wrap py-14 grid sm:grid-cols-3 gap-10">
@@ -37,19 +34,19 @@ export default function Footer() {
           <div className="text-xs uppercase tracking-wide text-steel mb-3">Quick links</div>
           <ul className="flex flex-col gap-2 text-sm">
             <li>
-              <button onClick={() => setActiveSection("services")} className="hover:text-white transition-colors">
+              <a href="/?section=services" className="hover:text-white transition-colors">
                 Services
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => setActiveSection("industries")} className="hover:text-white transition-colors">
+              <a href="/?section=industries" className="hover:text-white transition-colors">
                 Industries
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => setActiveSection("contact")} className="hover:text-white transition-colors">
+              <a href="/?section=contact" className="hover:text-white transition-colors">
                 Request a quote
-              </button>
+              </a>
             </li>
             <li>
               <a href="/privacy" className="hover:text-white transition-colors">
